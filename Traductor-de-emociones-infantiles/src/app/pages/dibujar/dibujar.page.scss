@@ -1,0 +1,162 @@
+ion-content {
+  --background: #1da0a0;
+}
+
+/*.page-dibujar {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}*/
+
+.custom-tab-bar {
+  --background: transparent;
+  //display: flex;
+  //justify-content: space-around;
+
+  ion-tab-button {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    --color: white;
+    border-radius: 2px;
+
+    ion-label {
+      font-weight: bold;
+      color: white;
+    }
+
+    ion-icon {
+      color: white;
+    }
+  }
+}
+
+.tab-escribir {
+  background-color: #f35464; // Rojo pastel
+}
+
+.tab-dibujar {
+  background-color: #e6e643; // Amarillo pastel
+  color: #333; // opcional si el amarillo no tiene suficiente contraste
+}
+
+.tab-camara {
+  background-color: #32eb5a; // Verde pastel
+}
+
+.tab-imagen {
+  background-color: #f79c34; // Naranja pastel
+}
+
+
+.btn-volver {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background-color: #ffffffcc;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-volver ion-icon {
+  font-size: 24px;
+  color: #333;
+}
+
+:host {
+
+  .container {
+    background-color:  #e6e643;
+    margin: 16px;
+    width: 70%;
+    margin-left:5%;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  canvas {
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    width: 100%;
+    height:300px;
+    background-color: #fff;
+    touch-action: none; /* disable scrolling while drawing */
+    z-index: 10;
+  }
+
+  .button-container {
+    display: block;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    z-index: 1000;
+  }
+
+  .pastel-btn {
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+  .pastel-btn-limpiar {
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.button-container ion-button
+{
+    color: white;
+}
+
+  @media (max-width: 600px) {
+    canvas {
+      height: 250px;
+    }
+    .container {
+    background-color:  e6e643;
+    margin: 16px;
+    width: 70%;
+    margin-left:15%;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+    .button-container {
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 601px) {
+
+    .container {
+    background-color:  e6e643;
+    margin: 16px;
+    width: 70%;
+    margin-left:15%;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+    .button-container {
+      flex-direction: column;
+    }
+  }
+}

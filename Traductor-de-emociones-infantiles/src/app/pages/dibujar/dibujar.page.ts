@@ -13,60 +13,60 @@ export class DibujarPage implements OnInit {
   ngOnInit() {
   }
 
-  @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('canvas', { static: false }) canvasRef!: ElementRef<HTMLCanvasElement>;
 
   private ctx!: CanvasRenderingContext2D;
   private drawing = false;
-  selectedColor = 'black';
-  predictedEmotion = '';
+  selectedColor = '#000000';
 
   ngAfterViewInit() {
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d')!;
-    canvas.addEventListener('mousedown', this.startDrawing.bind(this));
-    canvas.addEventListener('mouseup', this.stopDrawing.bind(this));
-    canvas.addEventListener('mousemove', this.draw.bind(this));
+    this.ctx.lineWidth = 4;
+    this.ctx.lineCap = 'round';
   }
 
-  startDrawing(event: MouseEvent) {
+  getCanvasPosition(event: any) {
+    const rect = this.canvasRef.nativeElement.getBoundingClientRect();
+    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+    const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top,
+    };
+  }
+
+  startDrawing(event: any) {
     this.drawing = true;
-    this.draw(event);
+    const pos = this.getCanvasPosition(event);
+    this.ctx.beginPath();
+    this.ctx.moveTo(pos.x, pos.y);
+    this.ctx.strokeStyle = this.selectedColor;
+  }
+
+  draw(event: any) {
+    if (!this.drawing) return;
+    const pos = this.getCanvasPosition(event);
+    this.ctx.lineTo(pos.x, pos.y);
+    this.ctx.stroke();
   }
 
   stopDrawing() {
     this.drawing = false;
-    this.ctx.beginPath();
-  }
-
-  draw(event: MouseEvent) {
-    if (!this.drawing) return;
-    const canvas = this.canvasRef.nativeElement;
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    this.ctx.lineWidth = 4;
-    this.ctx.lineCap = 'round';
-    this.ctx.strokeStyle = this.selectedColor;
-
-    this.ctx.lineTo(x, y);
-    this.ctx.stroke();
-    this.ctx.beginPath();
-    this.ctx.moveTo(x, y);
+    this.ctx.closePath();
   }
 
   clearCanvas() {
     const canvas = this.canvasRef.nativeElement;
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
-    this.predictedEmotion = '';
   }
 
-  predictEmotion() {
-    // Simulación de predicción
-    const emotions = ['Feliz', 'Triste', 'Enojado', 'Sorprendido', 'Relajado'];
-    const random = Math.floor(Math.random() * emotions.length);
-    this.predictedEmotion = emotions[random];
-    }
-  
+  saveDrawing() {
+    const canvas = this.canvasRef.nativeElement;
+    const imageData = canvas.toDataURL();
+    console.log('Imagen base64 lista para enviar o procesar:', imageData);
+    // Simular resultado
+    alert('Emoción predecida: ¡Feliz!');
+  }
 
 }

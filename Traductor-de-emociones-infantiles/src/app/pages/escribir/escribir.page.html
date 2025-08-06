@@ -1,37 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>escribir</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header [translucent]="true"></ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">escribir</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content
+  [fullscreen]="true"
+  class="page-escribir"
+  style="background-image: url('assets/img/Emokids.png'); background-size: cover; background-position: center;">
 
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button href="escribir">
+  <!-- Botón volver a inicio -->
+  <a href="inicio" class="btn-volver">
+    <ion-icon name="home-outline"></ion-icon>
+  </a>
+
+  <!-- Contenedor centrado -->
+  <div class="main-content-wrapper">
+    <div class="center-container container">
+      <h2 class="mb-3">Escribe una frase que  salga de tus emociones</h2>
+
+      <textarea
+        class="form-control"
+        [(ngModel)]="texto"
+        placeholder="Escribe aquí tu frase...">
+      </textarea>
+
+      <button class="pastel-btn mt-3" (click)="predecirEmocion()">
+        Predecir emoción
+      </button>
+
+      <div class="mt-4 pastel-resultado" *ngIf="emocion">
+        <h4>{{ emocion }}</h4>
+        <p>{{ mensaje }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu de tabs (sin modificar) -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+
+    <ion-tab-button href="escribir" class="tab-escribir">
       <ion-icon name="create-outline"></ion-icon>
       <ion-label>Escribir</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="dibujar">
+    <ion-tab-button href="dibujar" class="tab-dibujar">
       <ion-icon name="brush-outline"></ion-icon>
       <ion-label>Dibujar</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="camara">
+    <ion-tab-button href="camara" class="tab-camara">
       <ion-icon name="camera-outline"></ion-icon>
       <ion-label>Cámara</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="imagen">
+    <ion-tab-button href="imagen" class="tab-imagen">
       <ion-icon name="image-outline"></ion-icon>
       <ion-label>Subir Imagen</ion-label>
     </ion-tab-button>
+
   </ion-tab-bar>
 </ion-tabs>
 </ion-content>

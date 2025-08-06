@@ -1,0 +1,65 @@
+ion-content {
+  --background: #1da0a0;
+}
+
+.custom-tab-bar {
+  --background: transparent;
+  //display: flex;
+  //justify-content: space-around;
+
+  ion-tab-button {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    --color: white;
+    border-radius: 2px;
+
+    ion-label {
+      font-weight: bold;
+      color: white;
+    }
+
+    ion-icon {
+      color: white;
+    }
+  }
+}
+
+.tab-escribir {
+  background-color: #f35464; // Rojo pastel
+}
+
+.tab-dibujar {
+  background-color: #e6e643; // Amarillo pastel
+  color: #333; // opcional si el amarillo no tiene suficiente contraste
+}
+
+.tab-camara {
+  background-color: #32eb5a; // Verde pastel
+}
+
+.tab-imagen {
+  background-color: #f79c34; // Naranja pastel
+}
+
+
+.btn-volver {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background-color: #ffffffcc;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-volver ion-icon {
+  font-size: 24px;
+  color: #333;
+}

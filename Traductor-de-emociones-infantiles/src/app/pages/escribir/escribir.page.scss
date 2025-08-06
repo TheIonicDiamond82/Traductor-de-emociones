@@ -1,0 +1,135 @@
+//#1da0a0
+ion-content {
+  --background: #1da0a0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-escribir {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.main-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  padding: 70px 20px 120px 20px; /* deja espacio al top/bottom */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.center-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background-color: #f35464;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+  border-radius: 15px;
+  font-size: 1.2rem;
+  background-color: #fff8e1;
+  width: 100%;
+  color:black;
+  min-height: 120px;
+  padding: 10px;
+  border: none;
+  resize: none;
+}
+
+.pastel-btn {
+  background-color: #f7c774;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.pastel-btn:hover {
+  background-color: #f9b84c;
+}
+
+.pastel-resultado {
+  border-radius: 15px;
+  font-size: 1.1rem;
+  padding: 15px;
+  font-weight: bold;
+  background-color: #ffd9d9;
+  color: #b30000;
+}
+
+/* Botón volver fijo */
+.btn-volver {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background-color: #ffffffcc;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-volver ion-icon {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Tabs como ya los tenías */
+.custom-tab-bar {
+  --background: transparent;
+
+  ion-tab-button {
+    z-index: 1001;
+    flex: 2;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    --color: white;
+
+    ion-label {
+      font-weight: bold;
+      color: white;
+    }
+
+    ion-icon {
+      color: white;
+    }
+  }
+}
+
+
+.tab-escribir {
+  background-color: #f35464;
+}
+
+.tab-dibujar {
+  background-color: #e6e643;
+  color: #333;
+}
+
+.tab-camara {
+  background-color: #32eb5a;
+}
+
+.tab-imagen {
+  background-color: #f79c34;
+}

@@ -1,37 +1,43 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <!--<ion-toolbar>
     <ion-title>camara</ion-title>
-  </ion-toolbar>
+  </ion-toolbar>-->
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <!--<ion-toolbar>
       <ion-title size="large">camara</ion-title>
-    </ion-toolbar>
+    </ion-toolbar>-->
   </ion-header>
 
-  <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button href="escribir">
+    <!-- Ícono de volver a casa -->
+  <a href="inicio" class="btn-volver">
+    <ion-icon name="home-outline"></ion-icon>
+  </a>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+
+    <ion-tab-button href="escribir" class="tab-escribir">
       <ion-icon name="create-outline"></ion-icon>
       <ion-label>Escribir</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="dibujar">
+    <ion-tab-button href="dibujar" class="tab-dibujar">
       <ion-icon name="brush-outline"></ion-icon>
       <ion-label>Dibujar</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="camara">
+    <ion-tab-button href="camara" class="tab-camara">
       <ion-icon name="camera-outline"></ion-icon>
       <ion-label>Cámara</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button href="imagen">
+    <ion-tab-button href="imagen" class="tab-imagen">
       <ion-icon name="image-outline"></ion-icon>
       <ion-label>Subir Imagen</ion-label>
     </ion-tab-button>
+
   </ion-tab-bar>
 </ion-tabs>
 </ion-content>
