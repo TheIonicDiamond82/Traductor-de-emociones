@@ -4,12 +4,38 @@
   </ion-toolbar>-->
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <!--<ion-toolbar>
       <ion-title size="large">imagen</ion-title>
     </ion-toolbar>-->
   </ion-header>
+
+    <div class="container text-center">
+
+    <h3 class="my-3">Inserta una imagen para predecir la emoción</h3>
+
+    <!-- Input de archivo -->
+    <input type="file" accept="image/*" class="form-control mb-3" (change)="onFileSelected($event)">
+
+    <!-- Vista previa -->
+    <div *ngIf="imageSrc" class="mb-3">
+      <img [src]="imageSrc" class="img-fluid rounded shadow" alt="Vista previa de imagen">
+    </div>
+
+    <!-- Botón de predicción -->
+    <ion-button expand="block" class="button" color="success" (click)="predecirEmocion()" [disabled]="!imageSrc">
+      Predecir emoción
+    </ion-button>
+
+    <!-- Resultado de emoción -->
+    <div *ngIf="emocionPredicha" class="mt-4">
+      <h5>Resultado:</h5>
+      <ion-chip color="tertiary">
+        <ion-label>{{ emocionPredicha }}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
 
     <!-- Ícono de volver a casa -->
   <a href="inicio" class="btn-volver">

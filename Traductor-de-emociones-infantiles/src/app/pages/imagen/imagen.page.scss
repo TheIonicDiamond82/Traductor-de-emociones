@@ -48,7 +48,7 @@ ion-content {
   position: fixed;
   top: 16px;
   left: 16px;
-  z-index: 1000;
+  z-index: 1;
   background-color: #ffffffcc;
   padding: 10px;
   border-radius: 50%;
@@ -62,4 +62,15 @@ ion-content {
 .btn-volver ion-icon {
   font-size: 24px;
   color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+}
+
+.button
+{
+  z-index: 3;
 }
