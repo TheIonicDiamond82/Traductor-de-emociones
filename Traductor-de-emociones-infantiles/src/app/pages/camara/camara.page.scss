@@ -1,48 +1,55 @@
 ion-content {
   --background: #1da0a0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.custom-tab-bar {
-  --background: transparent;
-  //display: flex;
-  //justify-content: space-around;
-
-  ion-tab-button {
-    flex: 1;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    --color: white;
-    border-radius: 2px;
-
-    ion-label {
-      font-weight: bold;
-      color: white;
-    }
-
-    ion-icon {
-      color: white;
-    }
-  }
+.page-camara {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
-.tab-escribir {
-  background-color: #f35464; // Rojo pastel
+.main-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
-.tab-dibujar {
-  background-color: #e6e643; // Amarillo pastel
-  color: #333; // opcional si el amarillo no tiene suficiente contraste
+.center-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background-color: #32eb5a;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.tab-camara {
-  background-color: #32eb5a; // Verde pastel
+#webcam-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff8e1;
+  padding: 10px;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.tab-imagen {
-  background-color: #f79c34; // Naranja pastel
+.resultados {
+  background-color: #ffd9d9;
+  color: #32eb5a;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: bold;
 }
-
 
 .btn-volver {
   position: fixed;
@@ -62,4 +69,55 @@ ion-content {
 .btn-volver ion-icon {
   font-size: 24px;
   color: #333;
+}
+
+.custom-tab-bar {
+  --background: transparent;
+
+  ion-tab-button {
+    z-index: 0;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    --color: white;
+
+    ion-label {
+      font-weight: bold;
+      color: white;
+    }
+
+    ion-icon {
+      color: white;
+    }
+  }
+}
+
+ion-tabs {
+  margin-top: -20%;
+  margin-bottom: 10%;
+  position: relative;
+  height: 80%;
+}
+
+.tab-escribir {
+  background-color: #f35464;
+}
+
+.tab-dibujar {
+  background-color: #e6e643;
+  color: #333;
+}
+
+.tab-camara {
+  background-color: #32eb5a;
+}
+
+.tab-imagen {
+  background-color: #f79c34;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  z-index: 2;
 }

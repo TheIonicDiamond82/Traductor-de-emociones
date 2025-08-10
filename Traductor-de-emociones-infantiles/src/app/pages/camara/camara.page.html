@@ -1,43 +1,51 @@
-<ion-header [translucent]="true">
-  <!--<ion-toolbar>
-    <ion-title>camara</ion-title>
-  </ion-toolbar>-->
-</ion-header>
+<ion-header [translucent]="true"></ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <!--<ion-toolbar>
-      <ion-title size="large">camara</ion-title>
-    </ion-toolbar>-->
-  </ion-header>
-
-    <!-- Ícono de volver a casa -->
+<ion-content [fullscreen]="true" class="ion-padding page-camara">
+  <!-- Botón volver a inicio -->
   <a href="inicio" class="btn-volver">
     <ion-icon name="home-outline"></ion-icon>
   </a>
-<ion-tabs>
-  <ion-tab-bar slot="bottom" class="custom-tab-bar">
 
-    <ion-tab-button href="escribir" class="tab-escribir">
-      <ion-icon name="create-outline"></ion-icon>
-      <ion-label>Escribir</ion-label>
-    </ion-tab-button>
+  <!-- Contenido principal -->
+  <div class="main-content-wrapper">
+    <div class="center-container container">
+      <h3 class="mb-3">Predicción de emociones en tiempo real</h3>
 
-    <ion-tab-button href="dibujar" class="tab-dibujar">
-      <ion-icon name="brush-outline"></ion-icon>
-      <ion-label>Dibujar</ion-label>
-    </ion-tab-button>
+      <!-- Botón para iniciar la cámara -->
+      <ion-button expand="block" color="primary" (click)="init()">
+        Iniciar cámara
+      </ion-button>
 
-    <ion-tab-button href="camara" class="tab-camara">
-      <ion-icon name="camera-outline"></ion-icon>
-      <ion-label>Cámara</ion-label>
-    </ion-tab-button>
+      <!-- Contenedor de la cámara -->
+      <div id="webcam-container" class="my-3"></div>
 
-    <ion-tab-button href="imagen" class="tab-imagen">
-      <ion-icon name="image-outline"></ion-icon>
-      <ion-label>Subir Imagen</ion-label>
-    </ion-tab-button>
+      <!-- Contenedor de etiquetas -->
+      <div id="label-container" class="resultados"></div>
+    </div>
+  </div>
 
-  </ion-tab-bar>
-</ion-tabs>
+  <!-- Tabs fuera del contenedor central -->
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" class="custom-tab-bar">
+      <ion-tab-button href="escribir" class="tab-escribir">
+        <ion-icon name="create-outline"></ion-icon>
+        <ion-label>Escribir</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="dibujar" class="tab-dibujar">
+        <ion-icon name="brush-outline"></ion-icon>
+        <ion-label>Dibujar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="camara" class="tab-camara">
+        <ion-icon name="camera-outline"></ion-icon>
+        <ion-label>Cámara</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button href="imagen" class="tab-imagen">
+        <ion-icon name="image-outline"></ion-icon>
+        <ion-label>Subir Imagen</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
