@@ -12,36 +12,55 @@ export class EscribirPage implements OnInit {
   emocion: string = '';
   color: string = '';
   mensaje: string = '';
+  recomendacion: string = '';
+  icono: string = '';
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-    predecirEmocion() {
+  predecirEmocion() {
     const textoLimpio = this.texto.toLowerCase();
 
-    // Simulación de predicción basada en palabras clave
-    if (textoLimpio.includes('feliz') || textoLimpio.includes('alegre')) {
+    // Listas de palabras asociadas a cada emoción
+    const felicidad = ['feliz', 'alegre', 'divertido', 'jugué', 'corri', 'nos divertimos', 'contento', 'reí'];
+    const tristeza = ['triste', 'llorar', 'deprimido', 'solitario', 'mal', 'aburrido'];
+    const enojo = ['enojo', 'molesto', 'enfadado', 'pelea', 'rabia', 'fastidio', 'enoja'];
+    const miedo = ['miedo', 'asustado', 'temor', 'nervioso', 'susto'];
+
+    // Función para verificar si la frase contiene alguna palabra de la lista
+    const contiene = (palabras: string[]) => palabras.some(p => textoLimpio.includes(p));
+
+    if (contiene(felicidad)) {
       this.emocion = 'Felicidad';
-      this.color = '#FFD580'; // pastel amarillo
+      this.color = '#FFD580';
       this.mensaje = '¡Qué alegría leer eso! 😊';
-    } else if (textoLimpio.includes('triste') || textoLimpio.includes('llorar')) {
+      this.recomendacion = 'Sigue disfrutando y comparte tu alegría con alguien cercano.';
+      this.icono = '😊';
+    } else if (contiene(tristeza)) {
       this.emocion = 'Tristeza';
-      this.color = '#A0D2DB'; // pastel azul
+      this.color = '#A0D2DB';
       this.mensaje = 'Lo siento mucho 😢. ¡Todo estará bien!';
-    } else if (textoLimpio.includes('enojo') || textoLimpio.includes('molesto')) {
+      this.recomendacion = 'Habla con alguien de confianza y cuida tu corazón.';
+      this.icono = '😢';
+    } else if (contiene(enojo)) {
       this.emocion = 'Enojo';
-      this.color = '#F6A5A5'; // pastel rojo
+      this.color = '#F6A5A5';
       this.mensaje = '¡Respiremos juntos y contemos hasta 10! 😠';
-    } else if (textoLimpio.includes('miedo') || textoLimpio.includes('asustado')) {
+      this.recomendacion = 'Haz algo que te calme, como dibujar o respirar profundo.';
+      this.icono = '😠';
+    } else if (contiene(miedo)) {
       this.emocion = 'Miedo';
-      this.color = '#F6D6C9'; // pastel naranja
+      this.color = '#F6D6C9';
       this.mensaje = 'Es normal tener miedo. ¡Aquí estás seguro! 😨';
+      this.recomendacion = 'Habla con alguien de confianza y respira tranquilo.';
+      this.icono = '😨';
     } else {
       this.emocion = 'Indefinida';
-      this.color = '#E0E0E0'; // gris claro
+      this.color = '#E0E0E0';
       this.mensaje = 'No entendí la emoción 😕. ¿Puedes intentarlo de nuevo?';
+      this.recomendacion = 'Intenta escribir lo que sientes usando palabras claras.';
+      this.icono = '❓';
     }
   }
 
@@ -50,5 +69,7 @@ export class EscribirPage implements OnInit {
     this.emocion = '';
     this.color = '';
     this.mensaje = '';
+    this.recomendacion = '';
+    this.icono = '';
   }
 }
