@@ -23,10 +23,10 @@ export class EscribirPage implements OnInit {
     const textoLimpio = this.texto.toLowerCase();
 
     // Listas de palabras asociadas a cada emoción
-    const felicidad = ['feliz', 'alegre', 'divertido', 'jugué', 'corri', 'nos divertimos', 'contento', 'reí'];
-    const tristeza = ['triste', 'llorar', 'deprimido', 'solitario', 'mal', 'aburrido'];
-    const enojo = ['enojo', 'molesto', 'enfadado', 'pelea', 'rabia', 'fastidio', 'enoja'];
-    const miedo = ['miedo', 'asustado', 'temor', 'nervioso', 'susto'];
+    const felicidad = ['feliz', 'alegre', 'divertid', 'jugué', 'corri', 'nos divertimos', 'content', 'reí'];
+    const tristeza = ['triste', 'llorar', 'deprimid', 'solitario', 'mal', 'aburrid'];
+    const enojo = ['enojo', 'molest', 'enfadad', 'pelea', 'rabia', 'fastidio', 'enoja'];
+    const miedo = ['miedo', 'asustad', 'temor', 'nervios', 'susto'];
 
     // Función para verificar si la frase contiene alguna palabra de la lista
     const contiene = (palabras: string[]) => palabras.some(p => textoLimpio.includes(p));
