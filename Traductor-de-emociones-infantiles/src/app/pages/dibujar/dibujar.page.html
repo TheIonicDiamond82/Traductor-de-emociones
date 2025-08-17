@@ -34,6 +34,13 @@
         <ion-button expand="block" color="danger" (click)="clearCanvas()">Limpiar</ion-button>
         <ion-button expand="block" color="success" (click)="saveDrawing()">Predecir Emoción</ion-button>
       </div>
+
+      <!-- Resultado -->
+      <div class="mt-4 pastel-resultado" *ngIf="emocion" [style.background]="color">
+        <h4>{{ emocion }}</h4>
+        <p>{{ mensaje }}</p>
+        <small>{{ recomendacion }}</small>
+      </div>
     </div>
   </div>
 
